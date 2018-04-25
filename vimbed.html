@@ -30,13 +30,15 @@ input[type='number'] {
 </head>
 <body>
 <div id="information">
-<form id="generateVimbed">Video ID Number: <input id="video_id" type="number" min="100000000" max="1000000000" required>
-	<button type="submit" id="getcode">Get Embed Code</button></form></div>
+	Video ID Number: <input id="vidid" type="number">
+	<button id="getcode" onClick="vimbed()">Get Embed Code</button>
+</div>
 <hr>
 <textarea rows="6" cols="80" id="result"></textarea>
 <script>
-	function vimbed() {
-		var vidid = document.getElementById('video_id').value;
+	
+function vimbed() {
+		var vidid = document.getElementById('vidid').value;
  
 		var html = '&lt;iframe src="https://player.vimeo.com/video/' + vidid + '?color=104b7d&title=0&byline=0&portrait=0&transparent=0" width="750" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;';
  
@@ -45,6 +47,7 @@ input[type='number'] {
 	}
  
 document.getElementById('getcode').addEventListener('click', vimbed);
+		
 </script>
 </body>
 </html>
